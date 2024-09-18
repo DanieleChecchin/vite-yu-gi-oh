@@ -17,11 +17,11 @@ export default {
 
 <template>
     <div class="col">
-        <article class="card my-3 text-white">
+        <article class="card my-3 text-center ">
             <img :src="cardObject.card_images[0].image_url" class="card-img-top" alt="Card image">
             <div class="card-body">
-                <h5 class="card-title"> {{ cardObject.name }} </h5>
-                <p class="card-text"> Alien </p>
+                <h5 class="card-title text-white"> {{ cardObject.name }} </h5>
+                <p class="card-text"> {{ cardObject.archetype }} </p>
             </div>
         </article>
     </div>
@@ -29,10 +29,12 @@ export default {
 
 <style lang="scss" scoped>
 .col {
-    flex-basis: calc(100% / 5);
+    flex-basis: 20%;
 }
 
 .card {
     background-color: #D48F3B;
+    height: 400px;
+
 }
 </style>
