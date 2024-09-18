@@ -18,11 +18,14 @@ export default {
 </script>
 
 <template>
-    <div>
-        <h1>Main</h1>
-    </div>
-    <AppMainSelect />
-    <AppMainCards />
+    <main class="py-4">
+        <AppMainSelect />
+        <AppMainCards />
+    </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+main {
+    background-color: #D48F3B;
+}
+</style>
