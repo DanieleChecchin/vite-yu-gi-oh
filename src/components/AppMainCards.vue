@@ -16,8 +16,8 @@ export default {
             axios.get(this.apiUrl)
                 .then((response) => {
                     // handle success
-                    console.log(response);
-                    this.cardsList = response
+                    console.log(response.data.data);
+                    this.cardsList = response.data.data;
                 })
                 .catch(function (error) {
                     // handle error
@@ -38,9 +38,7 @@ export default {
 <template>
     <section class="container mt-4 bg-white p-5">
         <div class="row">
-            <div class="col-6 col-lg-3" v-for="n in 15">
-                <AppMainCardsItem />
-            </div>
+            <AppMainCardsItem v-for="card in cardsList" />
         </div>
     </section>
 </template>
