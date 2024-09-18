@@ -5,18 +5,23 @@ export default {
         return {
 
         }
+    },
+    props: {
+        cardObject: {
+            type: Object,
+            required: true
+        }
     }
 }
 </script>
 
 <template>
     <div class="col">
-        <article class="card my-3">
-            <img src="..." class="card-img-top" alt="...">
+        <article class="card my-3 text-white">
+            <img :src="cardObject.card_images.image_url" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+                <h5 class="card-title"> {{ cardObject.name }} </h5>
+                <p class="card-text"> Alien </p>
             </div>
         </article>
     </div>
@@ -25,5 +30,9 @@ export default {
 <style lang="scss" scoped>
 .col {
     flex-basis: calc(100% / 5);
+}
+
+.card {
+    background-color: #D48F3B;
 }
 </style>
