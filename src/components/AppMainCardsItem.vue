@@ -10,9 +10,11 @@ export default {
 </script>
 
 <template>
-    <div>
-        <h1>AppMainCardsItem</h1>
-    </div>
+    <article>
+        <img src="" alt="">
+        <h4></h4>
+        <span></span>
+    </article>
 </template>
 
 <style lang="scss" scoped></style>
