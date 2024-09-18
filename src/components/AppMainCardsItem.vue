@@ -18,7 +18,7 @@ export default {
 <template>
     <div class="col">
         <article class="card my-3 text-white">
-            <img :src="cardObject.card_images.image_url" class="card-img-top" alt="...">
+            <img :src="cardObject.card_images[0].image_url" class="card-img-top" alt="Card image">
             <div class="card-body">
                 <h5 class="card-title"> {{ cardObject.name }} </h5>
                 <p class="card-text"> Alien </p>
