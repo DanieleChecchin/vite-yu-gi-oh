@@ -34,10 +34,8 @@ export default {
                     this.archetypesList = response.data;
                 });
         },
-
-        //PROVA
-        logCiao() {
-            console.log('ciao')
+        selectArchetype(message) {
+            console.log(message)
         }
     },
     components: {
@@ -54,7 +52,7 @@ export default {
 
 <template>
     <main class="py-4">
-        <AppMainSelect :archetypes="archetypesList" @log-ciao="logCiao" />
+        <AppMainSelect :archetypes="archetypesList" @choose-archetype="selectArchetype" />
         <AppMainCards :cards="cardsList" />
     </main>
 </template>

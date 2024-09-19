@@ -3,13 +3,19 @@
 export default {
     data() {
         return {
-
+            optionSelected: '',
         }
     },
     props: {
         archetypes: {
             type: Array,
             required: true
+        }
+    },
+    methods: {
+        changeEvent() {
+            this.$emit('chooseArchetype', this.optionSelected);
+            console.log('ho messo emit nei metodi');
         }
     }
 
@@ -18,9 +24,9 @@ export default {
 
 <template>
     <div class="select container">
-        <select class="form-select" @change="$emit('logCiao')" aria-label="Default select example">
+        <select class="form-select" @change="changeEvent" v-model="optionSelected">
             <option selected>Choose an archetype</option>
-            <option v-for="(archetype, index) in archetypes" :key="index" value="1"> {{ archetype.archetype_name }}
+            <option v-for="(archetype, index) in archetypes" :key="index"> {{ archetype.archetype_name }}
             </option>
         </select>
     </div>
