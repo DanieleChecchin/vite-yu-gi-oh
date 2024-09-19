@@ -5,6 +5,12 @@ export default {
         return {
 
         }
+    },
+    props: {
+        archetypes: {
+            type: Array,
+            required: true
+        }
     }
 
 }
@@ -14,9 +20,8 @@ export default {
     <div class="select container">
         <select class="form-select" aria-label="Default select example">
             <option selected>Choose an archetype</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option v-for="(archetype, index) in archetypes" :key="index" value="1"> {{ archetype.archetype_name }}
+            </option>
         </select>
     </div>
 </template>

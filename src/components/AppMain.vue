@@ -50,7 +50,7 @@ export default {
 
 <template>
     <main class="py-4">
-        <AppMainSelect />
+        <AppMainSelect :archetypes="archetypesList" />
         <AppMainCards :cards="cardsList" />
     </main>
 </template>
