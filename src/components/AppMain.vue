@@ -8,7 +8,9 @@ export default {
     data() {
         return {
             cardsList: [],
-            apiUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0"
+            apiUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0",
+            archetypesList: [],
+            archetypeUrl: "https://db.ygoprodeck.com/api/v7/archetypes.php"
         }
     },
     methods: {
@@ -24,6 +26,13 @@ export default {
                     // handle error
                     console.log(error);
                 });
+        },
+        getArchetype() {
+            axios.get(this.archetypeUrl)
+                .then((response) => {
+                    console.log(response.data)
+                    this.archetypesList = response.data;
+                });
         }
 
     },
@@ -33,6 +42,7 @@ export default {
     },
     created() {
         this.getCards();
+        this.getArchetype();
     }
 
 }
