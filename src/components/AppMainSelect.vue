@@ -15,7 +15,6 @@ export default {
     methods: {
         changeEvent() {
             this.$emit('chooseArchetype', this.optionSelected);
-            console.log('ho messo emit nei metodi');
         }
     }
 

@@ -15,8 +15,12 @@ export default {
     },
     methods: {
         // Chiamata API
-        getCards() {
-            axios.get(this.apiUrl)
+        getCards(query = "") {
+            axios.get(this.apiUrl, {
+                params: {
+                    name: query
+                }
+            })
                 .then((response) => {
                     // handle success
                     console.log(response.data.data);
@@ -36,6 +40,7 @@ export default {
         },
         selectArchetype(message) {
             console.log(message)
+            this.getCards(message);
         }
     },
     components: {

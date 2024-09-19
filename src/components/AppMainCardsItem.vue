@@ -32,6 +32,7 @@ export default {
     flex-basis: 20%;
 }
 
+
 .card {
     background-color: #D48F3B;
     height: 400px;
