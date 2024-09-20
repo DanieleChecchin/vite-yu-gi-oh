@@ -15,10 +15,10 @@ export default {
     },
     methods: {
         // Chiamata API
-        getCards(query = "") {
+        getCards(archetypeFilter = null) {
             axios.get(this.apiUrl, {
                 params: {
-                    name: query
+                    archetype: archetypeFilter
                 }
             })
                 .then((response) => {
